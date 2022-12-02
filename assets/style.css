@@ -1,0 +1,216 @@
+* , *::after ,*::before {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: 'Josefin Sans', sans-serif;
+  
+}
+nav{
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 39px;
+    z-index: 999;
+}
+nav img{
+    margin: 20px;
+}
+nav  .list .list-item{
+    display: inline-block;
+   position: relative;
+}
+nav  .list .list-item a:hover{
+    color: #ff003c;
+}
+nav .list .list-item> a{
+    text-decoration: none;
+    color: #333;
+    font-size: 19px;
+    margin-left: 21px;
+}
+nav .list .dropdown{
+    opacity: 0;
+    position: absolute;
+    list-style: none;
+    width: 178px;
+    background-color: #fff;
+    border-top: 3px solid #ff003c;
+    border-radius: 13px 13px 0px 0px;
+    padding: 20px 0px;
+    top: 38px;
+    left: 20px;
+    transition: all 0.2s ease-in;
+}
+nav .list .list-item:hover .dropdown{
+    opacity: 1;
+    z-index: 1;
+   }
+nav .list .dropdown::before{
+    position: absolute;
+    top: -13px;
+    content: "";
+    left: 20px;
+    width: 0px;
+    height: 0px;
+    border-top:  5px solid transparent;
+    border-bottom: 5px solid #ff003c;
+    border-left:  5px solid transparent;
+    border-right:  5px solid transparent;
+    /* background-color: #ff003c; */
+}
+
+nav .list .list-item .dropdown .dropdown-item{
+    margin: 11px;
+    font-size: 22;
+  
+}
+nav .list .list-item .dropdown .dropdown-item a{
+    text-decoration: none;
+    color: black;
+}
+nav .list .list-item:nth-child(4):before{
+    content:"hot";
+    padding: 5px 8px;
+    position: absolute;
+   left: 50px;
+   top: -23px;
+   text-align: center;
+   background-color: #ff003c;
+   border-radius: 8px;
+   color: white;
+   font-size: 10px;
+   
+   text-transform: uppercase;
+   box-shadow: 0px 2px 5px rgba(0, 0, 0, 30%);
+}
+
+nav a:hover,
+nav .list .list-item .dropdown .dropdown-item a:hover,
+nav i:hover{
+    color: red;
+}
+nav i{
+    margin: 15px;
+}
+nav .bar-menue label,
+nav .bar-menue input{
+    display: none;
+}
+
+@media(max-width :991px) {
+    nav{
+        padding: 26px 14px;
+    }
+    nav img{
+          margin: 0px;
+    }
+    nav ul{
+        position: absolute;
+        background-color: beige;
+        width: 50%;
+        top: 90px;
+        left: 19px;
+        padding: 20px 0px;
+        opacity: 0;
+        transition: all 0.3s ease-in;
+    }
+    nav .bar-menue input:checked nav ul{
+      opacity: 1;
+      
+    }
+    nav .list .list-item{
+        display: block;
+        margin-bottom: 20px;
+       
+    }
+    nav i{
+        margin:5px;
+    }
+    nav .bar-menue label,
+    nav .bar-menue input{
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    nav .list .list-item:nth-child(4):before{
+        display: none;
+    }
+
+    /* ---------------------------end nav --------------------------------------------- */
+    
+  
+
+    /* ---------------------------end slider---------------------------------------- */
+
+}
+/* ---------------------------start slider---------------------------------------- */
+.container{
+    background-color: #f0f0f2;
+  
+}
+.slider{
+    width: 85%;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 50px;
+}
+.slider .bio{
+    margin-top: 20%;
+}
+.slider .bio h1{
+  font-size: 96px;
+  font-weight: 700;
+  margin-bottom: 26px;
+}
+.slider .bio h5{
+    font-size: 17px;
+    font-weight: 400;
+    margin-bottom: 60px;
+    padding-right: 50px;
+  }
+
+.slider .btn{
+    position: relative;
+    border: 0;
+    background-color: #333;
+    color: #f0f0f2;
+    padding: 21px 47px;
+    font-size: 17px;
+    z-index: 1;
+}
+.slider .btn::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0%;
+    height: 100%;
+    background-color: #ff003c;
+    z-index: -1;
+    transition: all 0.3s ease-in;
+}
+.slider .btn:hover::before{
+    width: 100%;
+}
+.slider img{
+
+    animation: scale 4s infinite alternate;
+}
+@keyframes scale{
+    0%{
+        transform: scale(1);
+    }
+   
+    100%{
+        transform: scale(1.1);
+    }
+}
